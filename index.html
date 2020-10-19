@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>lcscodes</title>
-<link rel="stylesheet" href="style.css">
+    <title>lcscodes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
- <!-- Side navigation -->
-<div class="sidenav">
-    <a href="#">Home</a>
-    <div style="color:white;padding-left: 16px;">Javascript</div>
-    <a href="#ajax">Ajax</a>
-  </div>
-  
-  <!-- Page content -->
-
-<section>
-<h2>LCSCODES</h2>
-<p>Kumpulan source code lcs.</p>
-</section>
-
-<section id="ajax">
-<h2>AJAX</h2> 
-<p>Ajax call codeigniter function echo html.</p>
-<pre><code contenteditable spellcheck="false">
-  $.ajax({
-    url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
-    type: 'POST', //method: 'POST',
-    data: {
-      angsuran_id: angsuran_id
-    },
-    success: function(res) {
-      alert(res);
-    }
-  });
-</code></pre>
-<br>
-<p>Ajax call codeigniter function json.</p>
-<pre><code contenteditable spellcheck="false">
-  $.ajax({
-    url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
-    type: 'POST',
-    dataType: "json",
-    data: {
-      angsuran_id: angsuran_id
-    },
-    success: function(res) {
-      alert(res.angsuran_id);
-      $('#id_angsuran').html(res);
-    }
-  });
-</code></pre>
-</section>
-
-
+    <div class="sidenav">
+        <a href="#">Home</a>
+        <div style="color:white;padding-left: 16px;">Javascript</div>
+        <a href="#ajax">Ajax</a>
+    </div>
+    <section>
+        <h2>LCSCODES</h2>
+        <p>Kumpulan source code lcs.</p>
+    </section>
+    <section id="ajax">
+        <h2>AJAX</h2>
+        <p>Ajax call codeigniter function echo html.</p>
+        <pre>
+            <code contenteditable spellcheck="false">
+                $.ajax({
+                  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
+                  type: 'POST', //method: 'POST',
+                  data: {
+                  angsuran_id: angsuran_id
+                  },
+                  success: function(res) {
+                    alert(res);
+                  }
+                });
+            </code>
+        </pre>
+        <br>
+        <p>Ajax call codeigniter function json.</p>
+        <pre>
+            <code contenteditable spellcheck="false">
+                $.ajax({
+                  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
+                  type: 'POST',
+                  dataType: "json",
+                  data: {
+                    angsuran_id: angsuran_id
+                  },
+                  success: function(res) {
+                    alert(res.angsuran_id);
+                    $('#id_angsuran').html(res);
+                  }
+                });
+            </code>
+        </pre>
+    </section>
 </body>
+
 </html>
