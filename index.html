@@ -29,16 +29,16 @@
         <p>Ajax call codeigniter function echo html.</p>
         <pre>
             <code contenteditable spellcheck="false">
-                $.ajax({
-                  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
-                  type: 'POST', //method: 'POST',
-                  data: {
-                  angsuran_id: angsuran_id
-                  },
-                  success: function(res) {
-                    alert(res);
-                  }
-                });
+$.ajax({
+  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
+  type: 'POST', //method: 'POST',
+  data: {
+  angsuran_id: angsuran_id
+  },
+  success: function(res) {
+    alert(res);
+  }
+});
             </code>
         </pre>
         <br>
