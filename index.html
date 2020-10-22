@@ -15,6 +15,8 @@
         <a href="#jquery">JQuery</a>
         <div style="color:white;padding-left: 16px;">HTML</div>
         <a href="#background-video-html-5">Background Video HTML 5</a>
+        <div style="color:white;padding-left: 16px;">PHP</div>
+        <a href="#setting-php-ini">Setting php.ini</a>
     </div>
 
     <section>
@@ -23,6 +25,8 @@
     </section>
 
     <hr>
+
+    <!-- AJAX -->
 
     <section id="ajax">
         <h2>AJAX</h2>
@@ -62,6 +66,8 @@ $.ajax({
 
     <hr>
 
+    <!-- JQUERY -->
+
     <section id="jquery">
         <h2>JQUERY</h2>
         <pre>
@@ -93,6 +99,8 @@ $('#mySelect2').trigger('change'); // Notify any JS components that the value ch
 
     <hr>
 
+    <!-- HTML -->
+
     <section id="background-video-html-5">
         <h2>Background Video HTML 5</h2>
         <p>
@@ -105,6 +113,24 @@ $('#mySelect2').trigger('change'); // Notify any JS components that the value ch
             Alternatif lain menggunakan Jquery: <br> http://syddev.com/jquery.videoBG/ <br> http://dfcb.github.io/BigVideo.js/ <br> sumber:http://www.babastudio.com/blog/trend-website-menggunakan-video-sebagai-background/
 
         </p>
+    </section>
+
+    <!-- PHP -->
+
+    <section id="setting-php-ini">
+        <h2>Background Video HTML 5</h2>
+        <p>Cari file php.ini</p>
+        <p>
+            Cari: <br> post_max_size = 8M<br> upload_max_filesize = 2M<br> max_execution_time = 30<br> max_input_time = 60<br> memory_limit = 8M<br>
+            <br><br> Ubah nilai menjadi:<br> post_max_size = 750M<br> upload_max_filesize = 750M<br> max_execution_time = 5000<br> max_input_time = 5000<br> memory_limit = 1000M<br>
+        </p>
+        <p>
+            Cari: <br> short_open_tag=Off
+            <br>
+            <br> Ubah nilai menjadi:<br> short_open_tag=On
+            <br>
+        </p>
+        <p>kemudian restart apache</p>
     </section>
 
     <hr>
