@@ -41,22 +41,21 @@ $.ajax({
 });
             </code>
         </pre>
-        <br>
         <p>Ajax call codeigniter function json.</p>
         <pre>
             <code contenteditable spellcheck="false">
-                $.ajax({
-                  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
-                  type: 'POST',
-                  dataType: "json",
-                  data: {
-                    angsuran_id: angsuran_id
-                  },
-                  success: function(res) {
-                    alert(res.angsuran_id);
-                    $('#id_angsuran').html(res);
-                  }
-                });
+$.ajax({
+  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
+  type: 'POST',
+  dataType: "json",
+  data: {
+    angsuran_id: angsuran_id
+  },
+  success: function(res) {
+    alert(res.angsuran_id);
+    $('#id_angsuran').html(res);
+  }
+});
             </code>
         </pre>
     </section>
@@ -67,25 +66,27 @@ $.ajax({
         <h2>JQUERY</h2>
         <pre>
           <code contenteditable spellcheck="false">
-              $(document).ready(function() {
-                
-              });
+$(document).ready(function() {
+  
+});
 
-              $(".anggota_nama").change(function() {
+$(".anggota_nama").change(function() {
 
-              });
+});
 
-              $("#bunga").keyup(function() {
+$("#bunga").keyup(function() {
 
-              });
+});
           </code>
           <p>get selected</p>
           <code contenteditable spellcheck="false">
-            var angsuran_id = $(this).find(':selected').attr('data-jenis-transaksi');
+var angsuran_id = $(this).find(':selected').attr('data-jenis-transaksi');
           </code>
           <p>select2 set value</p>
-          <code>$('#mySelect2').val('1'); // Select the option with a value of '1'
-            $('#mySelect2').trigger('change'); // Notify any JS components that the value changed</code>
+          <code>
+$('#mySelect2').val('1'); // Select the option with a value of '1'
+$('#mySelect2').trigger('change'); // Notify any JS components that the value changed
+          </code>
           
         </pre>
     </section>
