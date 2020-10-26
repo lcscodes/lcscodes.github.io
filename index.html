@@ -17,6 +17,7 @@
         <a href="#background-video-html-5">Background Video HTML 5</a>
         <div style="color:white;padding-left: 16px;">PHP</div>
         <a href="#setting-php-ini">Setting php.ini</a>
+        <a href="#login-kunci-jam">login, kunci berdasarkan jam</a>
     </div>
 
     <section>
@@ -118,7 +119,7 @@ $('#mySelect2').trigger('change'); // Notify any JS components that the value ch
     <!-- PHP -->
 
     <section id="setting-php-ini">
-        <h2>Background Video HTML 5</h2>
+        <h2>Setting php.ini</h2>
         <p>Cari file php.ini</p>
         <p>
             Cari: <br> post_max_size = 8M<br> upload_max_filesize = 2M<br> max_execution_time = 30<br> max_input_time = 60<br> memory_limit = 8M<br>
@@ -133,8 +134,39 @@ $('#mySelect2').trigger('change'); // Notify any JS components that the value ch
         <p>kemudian restart apache</p>
     </section>
 
+    <section id="login-kunci-jam">
+        <h2>login, kunci berdasarkan jam</h2>
+        <code>
+if($user->group_id==6){
+ 		date_default_timezone_set('Asia/Jakarta');
+ 		$datenow = date('m/d/Y H:i:s', time());
+ 		$datestart = date('m/d/Y', time()).' 07:00:00';
+		$dateend = date('m/d/Y', time()).' 16:00:00';
+ 		if($datenow>$datestart&&$datenow<$dateend){
+ 			$data2=array(
+ 				'userid'=>$user->userid,
+ 				'username'=>$user->username,
+ 				'password'=>$user->password,
+				'groupid'=>$user->group_id,
+				'sessionid'=>uniqid()
+ 			);
+ 			$this->session->set_userdata($data2);
+ 			redirect('dashboard/Dashboard');
+ 		}else{
+ 			echo '&lt;script language="javascript"&gt;alert("Diluar Jam kerja!")&lt;/script&gt;';
+ 			redirect('auth/Login');
+		}
+}else{
+    //login normal
+}           
+        </code>
+    </section>
+
     <hr>
 
 </body>
 
 </html>
+
+
+<!-- &lt;&gt; -->
