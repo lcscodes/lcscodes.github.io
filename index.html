@@ -10,6 +10,9 @@
 
     <div class="sidenav">
         <a href="#">Home</a>
+        <div style="color:white;padding-left: 16px;">Codeigniter Active Record</div>
+        <a href="#insert-id">Insert Id</a>
+        <a href="#select-row">Select Row</a>
         <div style="color:white;padding-left: 16px;">Javascript</div>
         <a href="#windows-print">Windows Print</a>
         <a href="#ajax">Ajax</a>
@@ -27,6 +30,31 @@
     </section>
 
     <hr>
+
+    <!-- Codeigniter -->
+
+    <section id="insert-id">
+        <h2>Insert Id</h2>
+        <pre>
+            <code contenteditable spellcheck="false">
+$insert_id=$this->db->insert_id();
+            </code>
+        </pre>
+    </section>
+
+    <section id="select-row">
+        <h2>Select Row</h2>
+        <pre>
+            <code contenteditable spellcheck="false">
+$this->db->select('*'); //updateGetData
+$this->db->where('anggota_id', $anggota_id);
+$query = $this->db->get('anggota', 1);
+if ($query->num_rows() == 1) {
+    $data_anggota = $query->row_array();
+}
+            </code>
+        </pre>
+    </section>
 
     <!-- JAVASCRIPT -->
 
