@@ -9,203 +9,22 @@
 <body>
 
     <div class="sidenav">
-        <a href="#">Home</a>
-        <div href="#insert-id" style="color:white;padding-left: 16px;">Codeigniter Active Record</div>
-        <a href="#insert-id">Insert Id</a>
-        <a href="#select-row">Select Row</a>
-        <div style="color:white;padding-left: 16px;">Javascript</div>
-        <a href="#windows-print">Windows Print</a>
-        <a href="#ajax">Ajax</a>
-        <a href="#jquery">JQuery</a>
-        <div style="color:white;padding-left: 16px;">HTML</div>
-        <a href="#background-video-html-5">Background Video HTML 5</a>
-        <div style="color:white;padding-left: 16px;">PHP</div>
-        <a href="#setting-php-ini">Setting php.ini</a>
-        <a href="#login-kunci-jam">login, kunci berdasarkan jam</a>
+        <a href="../" style="color:white;padding-left: 16px;">Home</a>
+        <div href="#active_record" style="color:white;padding-left: 16px;">Active Record</div>
     </div>
 
-    <section>
-        <h2>LCSCODES</h2>
-        <p>Kumpulan source code lcs.</p>
-    </section>
-
-    <hr>
-
-    <!-- Codeigniter -->
-
-    <section id="insert-id">
-        <h2>Insert Id</h2>
-        <pre>
-            <code contenteditable spellcheck="false">
-$insert_id=$this->db->insert_id();
-            </code>
-        </pre>
-    </section>
-
-    <section id="select-row">
-        <h2>Select Row</h2>
-        <pre>
-            <code contenteditable spellcheck="false">
-$this->db->select('*'); //updateGetData
-$this->db->where('anggota_id', $anggota_id);
-$query = $this->db->get('anggota', 1);
-if ($query->num_rows() == 1) {
-    $data_anggota = $query->row_array();
-}
-            </code>
-        </pre>
-    </section>
-
-    <!-- JAVASCRIPT -->
-
-    <section id="windows-print">
-        <h2>Windows Print</h2>
-        <pre>
-            <code contenteditable spellcheck="false">
-&lt;script&gt;
-    window.print()
-&lt;/script&gt;
-            </code>
-        </pre>
-    </section>
-
-    <hr>
-
-    <!-- AJAX -->
-
-    <section id="ajax">
-        <h2>AJAX</h2>
-        <p>Ajax call codeigniter function echo html.</p>
-        <pre>
-            <code contenteditable spellcheck="false">
-$.ajax({
-  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
-  type: 'POST', //method: 'POST',
-  data: {
-  angsuran_id: angsuran_id
-  },
-  success: function(res) {
-    alert(res);
-  }
-});
-            </code>
-        </pre>
-        <p>Ajax call codeigniter function json.</p>
-        <pre>
-            <code contenteditable spellcheck="false">
-$.ajax({
-  url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
-  type: 'POST',
-  dataType: "json",
-  data: {
-    angsuran_id: angsuran_id
-  },
-  success: function(res) {
-    alert(res.angsuran_id);
-    $('#id_angsuran').html(res);
-  }
-});
-            </code>
-        </pre>
-    </section>
-
-    <hr>
-
-    <!-- JQUERY -->
-
-    <section id="jquery">
-        <h2>JQUERY</h2>
-        <pre>
-          <code contenteditable spellcheck="false">
-$(document).ready(function() {
-  
-});
-
-$(".anggota_nama").change(function() {
-
-});
-
-$("#bunga").keyup(function() {
-
-});
-          </code>
-          <p>get selected</p>
-          <code contenteditable spellcheck="false">
-var angsuran_id = $(this).find(':selected').attr('data-jenis-transaksi');
-          </code>
-          <p>select2 set value</p>
-          <code>
-$('#mySelect2').val('1'); // Select the option with a value of '1'
-$('#mySelect2').trigger('change'); // Notify any JS components that the value changed
-          </code>
-          
-        </pre>
-    </section>
-
-    <hr>
-
-    <!-- HTML -->
-
-    <section id="background-video-html-5">
-        <h2>Background Video HTML 5</h2>
-        <p>
-            Membuat background video dengan HTML 5 agar terlihat lebih dinamis <br> Contoh web: http://demosthenes.info/samples/polina.html <br> Menggunakan tag &lt;video&gt;&lt;/video&gt;<br> Contoh script: <br> &lt;video autoplay loop poster=”/assets/images/polina.jpg
-            id=”bgvid”&gt; <br> &lt;source src=”../assets/videos/polina.webm” type=”video/webm”&gt; <br> &lt;source src=”../assets/videos/polina.mp4″ type=”video/mp4″&gt; &lt;/video&gt; <br> Penjelasan: <br>
-        </p>
-        <img src="assets/img/polina_detail.jpg" alt="">
-        <img src="assets/img/video_detai.jpg" alt="">
-        <p>
-            Alternatif lain menggunakan Jquery: <br> http://syddev.com/jquery.videoBG/ <br> http://dfcb.github.io/BigVideo.js/ <br> sumber:http://www.babastudio.com/blog/trend-website-menggunakan-video-sebagai-background/
-
-        </p>
-    </section>
-
-    <!-- PHP -->
-
-    <section id="setting-php-ini">
-        <h2>Setting php.ini</h2>
-        <p>Cari file php.ini</p>
-        <p>
-            Cari: <br> post_max_size = 8M<br> upload_max_filesize = 2M<br> max_execution_time = 30<br> max_input_time = 60<br> memory_limit = 8M<br>
-            <br><br> Ubah nilai menjadi:<br> post_max_size = 750M<br> upload_max_filesize = 750M<br> max_execution_time = 5000<br> max_input_time = 5000<br> memory_limit = 1000M<br>
-        </p>
-        <p>
-            Cari: <br> short_open_tag=Off
-            <br>
-            <br> Ubah nilai menjadi:<br> short_open_tag=On
-            <br>
-        </p>
-        <p>kemudian restart apache</p>
-    </section>
-
-    <section id="login-kunci-jam">
-        <h2>login, kunci berdasarkan jam</h2>
-        <pre>
-            <code>
-if($user->group_id==6){
- 		date_default_timezone_set('Asia/Jakarta');
- 		$datenow = date('m/d/Y H:i:s', time());
- 		$datestart = date('m/d/Y', time()).' 07:00:00';
-		$dateend = date('m/d/Y', time()).' 16:00:00';
- 		if($datenow>$datestart&&$datenow<$dateend){
- 			$data2=array(
- 				'userid'=>$user->userid,
- 				'username'=>$user->username,
- 				'password'=>$user->password,
-				'groupid'=>$user->group_id,
-				'sessionid'=>uniqid()
- 			);
- 			$this->session->set_userdata($data2);
- 			redirect('dashboard/Dashboard');
- 		}else{
- 			echo '&lt;script language="javascript"&gt;alert("Diluar Jam kerja!")&lt;/script&gt;';
- 			redirect('auth/Login');
-		}
-}else{
-    //login normal
-}           
-            </code>
-        </pre>
+    <section id="active-record">
+        <h2>Active Record CI</h2>
+        <p>private $_table = "kunjungan";<br> public $kunjungan_id;<br> public $kunjungan_tgl;<br> public $user_id;<br> public $pelanggan_id;<br> public $produk_id;<br> public $hasil;<br> public function getAll() { $this-&gt;<br>db-&gt;<br>select('a.*,usr.nama
+            petugas_nama,plg.nama pelanggan_nama,prd.produk_nama');<br> $this-&gt;<br>db-&gt;<br>from($this-&gt;<br>_table . ' a');<br> $this-&gt;<br>db-&gt;<br>join('users usr', 'usr.user_id = a.user_id');<br> $this-&gt;<br>db-&gt;<br>join('pelanggan
+            plg', 'plg.pelanggan_id = a.pelanggan_id');<br> $this-&gt;<br>db-&gt;<br>join('produk prd', 'prd.produk_id = a.produk_id');<br> return $this-&gt;<br>db-&gt;<br>get()-&gt;<br>result();<br> } public function getById($id) { $this-&gt;<br>db-&gt;<br>select('a.*,usr.nama
+            petugas_nama,plg.nama pelanggan_nama,prd.produk_nama');<br> $this-&gt;<br>db-&gt;<br>from($this-&gt;<br>_table . ' a');<br> $this-&gt;<br>db-&gt;<br>join('users usr', 'usr.user_id = a.user_id');<br> $this-&gt;<br>db-&gt;<br>join('pelanggan
+            plg', 'plg.pelanggan_id = a.pelanggan_id');<br> $this-&gt;<br>db-&gt;<br>join('produk prd', 'prd.produk_id = a.produk_id');<br> $this-&gt;<br>db-&gt;<br>where('a.kunjungan_id', $id);<br> return $this-&gt;<br>db-&gt;<br>get()-&gt;<br>row();<br>            } public function save() { $post = $this-&gt;<br>input-&gt;<br>post();<br> $this-&gt;<br>kunjungan_tgl = $post["kunjungan_tgl"];<br> $this-&gt;<br>user_id = $post["user_id"];<br> $this-&gt;<br>pelanggan_id = $post["pelanggan_id"];<br> $this-&gt;<br>produk_id
+            = $post["produk_id"];<br> $this-&gt;<br>hasil = $post["hasil"];<br> return $this-&gt;<br>db-&gt;<br>insert($this-&gt;<br>_table, $this);<br> } public function update() { $post = $this-&gt;<br>input-&gt;<br>post();<br> $this-&gt;<br>kunjungan_id
+            = $post["id"];<br> $this-&gt;<br>kunjungan_tgl = $post["kunjungan_tgl"];<br> $this-&gt;<br>user_id = $post["user_id"];<br> $this-&gt;<br>pelanggan_id = $post["pelanggan_id"];<br> $this-&gt;<br>produk_id = $post["produk_id"];<br> $this-&gt;<br>hasil
+            = $post["hasil"];<br> return $this-&gt;<br>db-&gt;<br>update($this-&gt;<br>_table, $this, array('kunjungan_id' =&gt;<br> $post['id']));<br> } public function delete($id) { return $this-&gt;<br>db-&gt;<br>delete($this-&gt;<br>_table, array("kunjungan_id"
+            =&gt;
+            <br> $id));<br> }</p>
     </section>
 
     <hr>
