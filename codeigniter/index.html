@@ -73,6 +73,8 @@
   {
     return $this->db->delete($this->_table, array("kunjungan_id" => $id));
   }
+
+  $insert_id=$this->db->insert_id();
         </code></pre>
     </section>
 
