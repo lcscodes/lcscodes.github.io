@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>lcscodes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="../">Home</a>
+        <div style="color:white;padding-left: 16px;">JQUERY</div>
+        <a href="#basic-function">Basic Function</a>
+        <a href="#select-option">Select Option</a>
+        <a href="#select2">Select2</a>
+    </div>
+
+    <section id="active-record">
+        <h2>Basic Function</h2>
+        <pre><code contenteditable spellcheck="false">
+$(document).ready(function() {
+
+});
+
+$(".anggota_nama").change(function() {
+
+});
+
+$("#nama").keyup(function() {
+
+});
+        </code></pre>
+    </section>
+
+    <section id="select-option">
+        <h2>select-option</h2>
+        <pre><code contenteditable spellcheck="false">
+//get selected
+var angsuran_id = $(this).find(':selected').attr('data-jenis-transaksi');
+      </code></pre>
+    </section>
+
+    <section id="select2">
+        <h2>select2</h2>
+        <pre><code contenteditable spellcheck="false">
+//set value
+$('#mySelect2').val('1'); // Select the option with a value of '1'
+$('#mySelect2').trigger('change'); // Notify any JS components that the value changed
+    </code></pre>
+    </section>
+
+    <hr>
+
+</body>
+
+</html>
+
+
+<!-- &lt;&gt; -->

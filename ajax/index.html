@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>lcscodes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="../">Home</a>
+        <div style="color:white;padding-left: 16px;">AJAX</div>
+        <a href="#basic-function">Basic Function</a>
+    </div>
+
+    <section id="basic-function">
+        <h2>Basic Function</h2>
+        <pre><code contenteditable spellcheck="false">
+// Ajax call codeigniter function echo html.
+$.ajax({
+    url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
+    type: 'POST', //method: 'POST',
+    data: {
+    angsuran_id: angsuran_id
+    },
+    success: function(res) {
+        alert(res);
+    }
+});
+
+// Ajax call codeigniter function json.
+$.ajax({
+    url: "&lt;?php echo base_url() . $this->modul_name . '/getDetAngsuran'; ?&gt;",
+    type: 'POST',
+    dataType: "json",
+    data: {
+      angsuran_id: angsuran_id
+    },
+    success: function(res) {
+      alert(res.angsuran_id);
+      $('#id_angsuran').html(res);
+    }
+});
+        </code></pre>
+    </section>
+
+    <hr>
+
+</body>
+
+</html>
+
+
+<!-- &lt;&gt; -->
