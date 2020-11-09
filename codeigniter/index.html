@@ -15,7 +15,7 @@
 
     <section id="active-record">
         <h2>Active Record CI</h2>
-        <code contenteditable spellcheck="false">
+        <pre><code contenteditable spellcheck="false">
   private $_table = "kunjungan";
 
   public $kunjungan_id;
@@ -73,7 +73,7 @@
   {
     return $this->db->delete($this->_table, array("kunjungan_id" => $id));
   }
-        </code>
+        </code></pre>
     </section>
 
     <hr>
