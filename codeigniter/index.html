@@ -15,14 +15,65 @@
 
     <section id="active-record">
         <h2>Active Record CI</h2>
-        <p>private $_table = "kunjungan";<br> public $kunjungan_id;<br> public $kunjungan_tgl;<br> public $user_id;<br> public $pelanggan_id;<br> public $produk_id;<br> public $hasil;<br> public function getAll() { $this-&gt;db-&gt;select('a.*,usr.nama petugas_nama,plg.nama
-            pelanggan_nama,prd.produk_nama');<br> $this-&gt;db-&gt;from($this-&gt;_table . ' a');<br> $this-&gt;db-&gt;join('users usr', 'usr.user_id = a.user_id');<br> $this-&gt;db-&gt;join('pelanggan plg', 'plg.pelanggan_id = a.pelanggan_id');<br> $this-&gt;db-&gt;join('produk
-            prd', 'prd.produk_id = a.produk_id');<br> return $this-&gt;db-&gt;get()-&gt;result();<br> } public function getById($id) { $this-&gt;db-&gt;select('a.*,usr.nama petugas_nama,plg.nama pelanggan_nama,prd.produk_nama');<br> $this-&gt;db-&gt;from($this-&gt;_table
-            . ' a');<br> $this-&gt;db-&gt;join('users usr', 'usr.user_id = a.user_id');<br> $this-&gt;db-&gt;join('pelanggan plg', 'plg.pelanggan_id = a.pelanggan_id');<br> $this-&gt;db-&gt;join('produk prd', 'prd.produk_id = a.produk_id');<br> $this-&gt;db-&gt;where('a.kunjungan_id',
-            $id);<br> return $this-&gt;db-&gt;get()-&gt;row();<br> } public function save() { $post = $this-&gt;input-&gt;post();<br> $this-&gt;kunjungan_tgl = $post["kunjungan_tgl"];<br> $this-&gt;user_id = $post["user_id"];<br> $this-&gt;pelanggan_id
-            = $post["pelanggan_id"];<br> $this-&gt;produk_id = $post["produk_id"];<br> $this-&gt;hasil = $post["hasil"];<br> return $this-&gt;db-&gt;insert($this-&gt;_table, $this);<br> } public function update() { $post = $this-&gt;input-&gt;post();<br>            $this-&gt;kunjungan_id = $post["id"];<br> $this-&gt;kunjungan_tgl = $post["kunjungan_tgl"];<br> $this-&gt;user_id = $post["user_id"];<br> $this-&gt;pelanggan_id = $post["pelanggan_id"];<br> $this-&gt;produk_id = $post["produk_id"];<br> $this-&gt;hasil
-            = $post["hasil"];<br> return $this-&gt;db-&gt;update($this-&gt;_table, $this, array('kunjungan_id' =&gt; $post['id']));<br> } public function delete($id) { return $this-&gt;db-&gt;delete($this-&gt;_table, array("kunjungan_id" =&gt;
-            <br> $id));<br> }</p>
+        <code contenteditable spellcheck="false">
+  private $_table = "kunjungan";
+
+  public $kunjungan_id;
+  public $kunjungan_tgl;
+  public $user_id;
+  public $pelanggan_id;
+  public $produk_id;
+  public $hasil;
+
+  public function getAll()
+  {
+    $this->db->select('a.*,usr.nama petugas_nama,plg.nama pelanggan_nama,prd.produk_nama');
+    $this->db->from($this->_table . ' a');
+    $this->db->join('users usr', 'usr.user_id = a.user_id');
+    $this->db->join('pelanggan plg', 'plg.pelanggan_id = a.pelanggan_id');
+    $this->db->join('produk prd', 'prd.produk_id = a.produk_id');
+    return $this->db->get()->result();
+  }
+
+  public function getById($id)
+  {
+    $this->db->select('a.*,usr.nama petugas_nama,plg.nama pelanggan_nama,prd.produk_nama');
+    $this->db->from($this->_table . ' a');
+    $this->db->join('users usr', 'usr.user_id = a.user_id');
+    $this->db->join('pelanggan plg', 'plg.pelanggan_id = a.pelanggan_id');
+    $this->db->join('produk prd', 'prd.produk_id = a.produk_id');
+    $this->db->where('a.kunjungan_id', $id);
+    return $this->db->get()->row();
+  }
+
+  public function save()
+  {
+    $post = $this->input->post();
+    $this->kunjungan_tgl = $post["kunjungan_tgl"];
+    $this->user_id = $post["user_id"];
+    $this->pelanggan_id = $post["pelanggan_id"];
+    $this->produk_id = $post["produk_id"];
+    $this->hasil = $post["hasil"];
+    return $this->db->insert($this->_table, $this);
+  }
+
+  public function update()
+  {
+    $post = $this->input->post();
+    $this->kunjungan_id = $post["id"];
+    $this->kunjungan_tgl = $post["kunjungan_tgl"];
+    $this->user_id = $post["user_id"];
+    $this->pelanggan_id = $post["pelanggan_id"];
+    $this->produk_id = $post["produk_id"];
+    $this->hasil = $post["hasil"];
+    return $this->db->update($this->_table, $this, array('kunjungan_id' => $post['id']));
+  }
+
+  public function delete($id)
+  {
+    return $this->db->delete($this->_table, array("kunjungan_id" => $id));
+  }
+        </code>
     </section>
 
     <hr>
