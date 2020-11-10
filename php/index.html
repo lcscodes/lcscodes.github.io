@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>lcscodes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="../">Home</a>
+        <div style="color:white;padding-left: 16px;">PHP</div>
+        <a href="#basic-function">Basic Function</a>
+        <a href="#setting-php-ini">Setting php.ini</a>
+    </div>
+
+    <section id="active-record">
+        <h2>Basic Function</h2>
+        <pre><code contenteditable spellcheck="false">
+// login, kunci berdasarkan jam
+if($user->group_id==6){
+        date_default_timezone_set('Asia/Jakarta');
+        $datenow = date('m/d/Y H:i:s', time());
+        $datestart = date('m/d/Y', time()).' 07:00:00';
+        $dateend = date('m/d/Y', time()).' 16:00:00';
+        if($datenow>$datestart&&$datenow<$dateend){
+            $data2=array(
+                'userid'=>$user->userid,
+                'username'=>$user->username,
+                'password'=>$user->password,
+                'groupid'=>$user->group_id,
+                'sessionid'=>uniqid()
+            );
+            $this->session->set_userdata($data2);
+            redirect('dashboard/Dashboard');
+        }else{
+            echo '&lt;script language="javascript"&gt;alert("Diluar Jam kerja!")&lt;/script&gt;';
+            redirect('auth/Login');
+        }
+}else{
+    //login normal
+}           
+        </code></pre>
+    </section>
+
+    <section id="setting-php-ini">
+        <h2>Setting PHP .ini</h2>
+        <p>Cari file php.ini</p>
+        <p>
+            Cari: <br> post_max_size = 8M<br> upload_max_filesize = 2M<br> max_execution_time = 30<br> max_input_time = 60<br> memory_limit = 8M<br>
+            <br><br> Ubah nilai menjadi:<br> post_max_size = 750M<br> upload_max_filesize = 750M<br> max_execution_time = 5000<br> max_input_time = 5000<br> memory_limit = 1000M<br>
+        </p>
+        <p>
+            Cari: <br> short_open_tag=Off
+            <br>
+            <br> Ubah nilai menjadi:<br> short_open_tag=On
+            <br>
+        </p>
+        <p>kemudian restart apache</p>
+    </section>
+    <hr>
+
+</body>
+
+</html>
+
+
+<!-- &lt;&gt; -->
