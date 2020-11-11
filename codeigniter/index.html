@@ -11,8 +11,20 @@
     <div class="sidenav">
         <a href="../">Home</a>
         <div style="color:white;padding-left: 16px;">CODEIGNITER</div>
+        <a href="#get-started-ci3">CI 3 Get Started</a>
         <a href="#active_record">Active Record</a>
     </div>
+
+    <section id="get-started-ci3">
+        <h2>Get Started Codeigniter 3</h2>
+        <p>download at <a href="https://www.codeigniter.com/download">https://www.codeigniter.com/download</a></p>
+        <p>setting file config.php <br> $config['base_url'] = 'https://localhost/namaAplikasi/'; </p>
+        <p>setting file autoload.php <br> $autoload['libraries'] = array('session', 'database'); <br> $autoload['helper'] = array('url'); </p>
+        <p>setting file routes.php <br> $route['default_controller'] = 'auth/login'; </p>
+        <p>setting file database.php <br> 'hostname' => 'localhost', <br> 'username' => 'root', <br> 'password' => '', <br> 'database' => 'dbname', <br> 'dbdriver' => 'mysqli', //mysqli/mysql </p>
+        <p>buat file .htaccess di folder root <br> RewriteEngine On <br> RewriteCond %{REQUEST_FILENAME} !-f <br> RewriteCond %{REQUEST_FILENAME} !-d <br> RewriteRule ^(.*)$ index.php/$1 [L] </p>
+
+    </section>
 
     <section id="active-record">
         <h2>Active Record CI</h2>

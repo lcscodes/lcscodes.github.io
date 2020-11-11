@@ -21,6 +21,11 @@
 &lt;script&gt;
     window.print()
 &lt;/script&gt;
+
+// disable double klik submit
+$('form#myform').submit(function() {
+    $(this).find(':input[type=submit]').prop('disabled', true);
+});
         </code></pre>
     </section>
 
