@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>lcscodes.github.io</title>
+    <script type="text/javascript" src="../../../assets/include_html.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/dashboard.css" rel="stylesheet">
+</head>
+
+<body onload="myFunction()">
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">lcscodes.github.io</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+            </li>
+        </ul>
+    </nav>
+    <div w3-include-html="../../../menu.html"></div>
+    </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">PHP</h1>
+        </div>
+        <script>
+            function myFunction() {
+                var element = document.getElementById("set-php-ini");
+                element.classList.add("active");
+            }
+        </script>
+        <!-- content below here -->
+
+        <h5>Setting PHP .ini</h5>
+        <p>Cari file php.ini</p>
+        <p>
+            Cari: <br> post_max_size = 8M<br> upload_max_filesize = 2M<br> max_execution_time = 30<br> max_input_time = 60<br> memory_limit = 8M<br>
+            <br><br> Ubah nilai menjadi:<br> post_max_size = 750M<br> upload_max_filesize = 750M<br> max_execution_time = 5000<br> max_input_time = 5000<br> memory_limit = 1000M<br>
+        </p>
+        <p>
+            Cari: <br> short_open_tag=Off
+            <br>
+            <br> Ubah nilai menjadi:<br> short_open_tag=On
+            <br>
+        </p>
+        <p>kemudian restart apache</p>
+
+    </main>
+    <div w3-include-html="../../../assets/footer.html"></div>
+
+    <script>
+        includeHTML();
+    </script>
