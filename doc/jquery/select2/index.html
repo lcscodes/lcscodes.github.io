@@ -41,6 +41,11 @@
 //set value
 $('#mySelect2').val('1'); // Select the option with a value of '1'
 $('#mySelect2').trigger('change'); // Notify any JS components that the value changed
+//clear opt value
+$('#satuanId').empty().trigger('change');
+//change opt value
+$('#satuanId').append(new Option('PACK', 9, false, false)).trigger('change');
+$('#satuanId').append(new Option('DOZ', 10, false, false)).trigger('change');
     </code></pre>
 
     </main>
