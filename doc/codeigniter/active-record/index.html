@@ -38,6 +38,10 @@
 
         <h5>Active Record CI</h5>
         <pre><code contenteditable spellcheck="false">
+// Paling Simple
+$data['data_bku_rinci'] = $this->db->query('select * from bku_rinci where id_bku =' . $idkey_sub)->result();
+$data['data_bku_rinci'] = $this->db->query('select * from bku_rinci where id_bku =' . $idkey_sub)->row();
+
   private $_table = "kunjungan";
 
   public $kunjungan_id;
