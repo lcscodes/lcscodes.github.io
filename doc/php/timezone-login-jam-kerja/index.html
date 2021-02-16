@@ -37,24 +37,29 @@
         <!-- content below here -->
 
         <pre><code contenteditable spellcheck="false">
-
-// isset
-if (isset($a)) {
-    echo "Variable 'a' is set";
-}
-
-// Explode
-
-$pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
-$pieces = explode(" ", $pizza);
-echo $pieces[0]; // piece1
-echo $pieces[1]; // piece2
-
-$data = "foo:*:1023:1000::/home/foo:/bin/sh";
-list($user, $pass, $uid, $gid, $gecos, $home, $shell) = explode(":", $data);
-echo $user; // foo
-echo $pass; // *
-
+// login, kunci berdasarkan jam
+if($user->group_id==6){
+        date_default_timezone_set('Asia/Jakarta');
+        $datenow = date('m/d/Y H:i:s', time());
+        $datestart = date('m/d/Y', time()).' 07:00:00';
+        $dateend = date('m/d/Y', time()).' 16:00:00';
+        if($datenow>$datestart&&$datenow&lt;$dateend){
+            $data2=array(
+                'userid'=>$user->userid,
+                'username'=>$user->username,
+                'password'=>$user->password,
+                'groupid'=>$user->group_id,
+                'sessionid'=>uniqid()
+            );
+            $this->session->set_userdata($data2);
+            redirect('dashboard/Dashboard');
+        }else{
+            echo '&lt;script language="javascript"&gt;alert("Diluar Jam kerja!")&lt;/script&gt;';
+            redirect('auth/Login');
+        }
+}else{
+    //login normal
+}           
 
         </code></pre>
 
