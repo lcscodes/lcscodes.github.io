@@ -26,24 +26,18 @@
     </nav>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">JAVASCRIPT</h1>
+            <h1 class="h2">EVENT HANDLE</h1>
         </div>
         <script>
             function myFunction() {
-                var element = document.getElementById("basic-function-jq");
+                var element = document.getElementById("event-handle");
                 element.classList.add("active");
             }
         </script>
         <!-- content below here -->
 
-        <h2>Basic Function</h2>
+        <h2>Event Handle</h2>
         <pre><code contenteditable spellcheck="false">
-$(document).ready(function() {
-
-});
-
-// EVENT HANDLE
-
 $(document).ready(function() {
 
     $(".anggota_nama").change(function() {
@@ -55,23 +49,6 @@ $(document).ready(function() {
     });
     
 });
-
-
-// EVENT FOR DYNAMIC ID OR CLASS
-
-$(document).on('click','#btnPrepend',function(){
-
-})
-
-// DISABLE FORM SUBMIT ENTER
-$(document).ready(function() {
-    $(window).keydown(function(event){
-      if(event.keyCode == 13) {
-        event.preventDefault();
-        return false;
-      }
-    });
-  });
         </code></pre>
 
     </main>
