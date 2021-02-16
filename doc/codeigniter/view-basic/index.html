@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>lcscodes.github.io</title>
+    <script type="text/javascript" src="../../../assets/include_html.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/dashboard.css" rel="stylesheet">
+</head>
+
+<body onload="myFunction()">
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">lcscodes.github.io</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+            </li>
+        </ul>
+    </nav>
+    <div w3-include-html="../../../menu.html"></div>
+    </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Codeigniter</h1>
+        </div>
+        <script>
+            function myFunction() {
+                var element = document.getElementById("view-basic");
+                element.classList.add("active");
+            }
+        </script>
+        <!-- content below here -->
+
+        <h5>view-basic</h5>
+        <pre><code contenteditable spellcheck="false">
+          public function form($idkey = '')
+          {
+            $this->modul_title = 'Pindah Buku';
+            extract($_POST);
+            if (!empty($idkey)) {
+              if (substr($idkey, 0, 1) == 'v') {
+                $idkey = substr($idkey, 1);
+                $data['idkey'] = $idkey;
+                $data['vmode'] = true;
+              }else{
+                $data['idkey'] = $idkey;
+                $data['vmode'] = false;
+              }
+              $this->db->where('a.id_bku', $idkey_sub);
+		        	$this->db->select('a.*');
+              $this->db->from('bku a');
+              $data['bku'] = $this->db->get()->row();
+              if (isset($submit)) {
+                $params_bku['tanggal'] = $tgl_pindah_buku;
+                $params_bku['uraian'] = 'Pemindahbukuan';
+                $this->db->where('id_bku', $idkey_sub);
+                $this->db->update('bku', $params_bku);
+                redirect($this->modul_name);
+              }
+            }else{ // ,if (!empty($idkey))
+              if (isset($submit)) {
+                $params_bku['tanggal'] = $tgl_pindah_buku;
+                $params_bku['uraian'] = 'Pemindahbukuan';
+                $this->db->insert('bku', $params_bku);
+                $insert_id = $this->db->insert_id();
+                redirect($this->modul_name);
+              }
+            } // .if (!empty($idkey))
+            $data['main_content'] = 'form_pindah_buku';
+		        $this->load->view('main/main_layout', $data);
+          }
+        </code></pre>
+    </main>
+    <div w3-include-html="../../../assets/footer.html"></div>
+
+    <script>
+        includeHTML();
+    </script>

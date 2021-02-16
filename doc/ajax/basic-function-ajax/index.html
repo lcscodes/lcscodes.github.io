@@ -63,6 +63,40 @@ $.ajax({
       $('#id_angsuran').html(res);
     }
 });
+
+
+$.ajax({
+    url: "?php echo base_url() . $this->modul_name . '/getBkuRinciById'; ?>",
+    type: 'POST',
+    dataType: "json",
+    async: true,
+    data: {
+        unit_kode: unit_kode
+    },
+    success: function(res) {
+        $("#rincian").html('');
+        cres = res.length;
+        if (cres == 0) {
+            $("#rincian").html('Tidak Ada Data .......');
+        }
+        for (ii = 0; ii  cres; ii++) {
+            dataidtr = '';
+            dataidtr = res[ii].sub_rincian_obyek_kode;
+            dataidtr = dataidtr.replace(/\./g, '');
+
+            $('#nodata_rincian').remove();
+            $("#rincian").append('tr id="tr' + dataidtr + '">' +
+                'td>a role="button" id="btnDelRincian" data-id="' + res[ii].sub_rincian_obyek_kode + '">i class="fas fa-trash" style="color:#007bff;">/i>/a>&nbsp;&nbsp;' + (ii + 1) + '/td>' +
+                'td>input type="hidden" name="v_spj_id[]" class="spj_id' + res[ii].id + '" value="' + res[ii].id + '">input type="hidden" class="rincian_id' + res[ii].sub_rincian_obyek_kode + '" value="' + res[ii].sub_rincian_obyek_kode + '">input type="hidden" name="v_sub_kegiatan_kode[]" value="' + res[ii].sub_kegiatan_kode + '">' + res[ii].sub_kegiatan_kode + '/td>' +
+                'td>input type="hidden" name="v_sub_rincian_obyek_kode[]" value="' + res[ii].sub_rincian_obyek_kode + '">' + res[ii].sub_rincian_obyek_kode + '/td>' +
+                'td>input type="hidden" name="v_nama_rekening[]" value="' + res[ii].nama_rekening + '">' + res[ii].nama_rekening + '/td>' +
+                'td align=right>input type="hidden" name="v_nilai[]" value="' + res[ii].belanja + '">' + formatRupiah(res[ii].belanja) + '/td>' +
+                '/tr>');
+        }
+
+
+    }
+});
         </code></pre>
 
     </main>

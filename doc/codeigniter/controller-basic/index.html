@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>lcscodes.github.io</title>
+    <script type="text/javascript" src="../../../assets/include_html.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/dashboard.css" rel="stylesheet">
+</head>
+
+<body onload="myFunction()">
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">lcscodes.github.io</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+            </li>
+        </ul>
+    </nav>
+    <div w3-include-html="../../../menu.html"></div>
+    </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Codeigniter</h1>
+        </div>
+        <script>
+            function myFunction() {
+                var element = document.getElementById("controller-basic");
+                element.classList.add("active");
+            }
+        </script>
+        <!-- content below here -->
+
+        <h5>controller-basic</h5>
+        <pre><code contenteditable spellcheck="false">
+          public function __construct()
+	{
+		parent::__construct();
+		$this->modul_name = 'spp';
+		$this->modul_title = 'SPP Gaji';
+		$this->load->helper('tanggal_helper');
+		$this->load->helper("terbilang_helper");
+	}
+
+  public function index()
+	{
+		$data_unit = $this->db->query('select distinct(unit_kode),unit_nama from anggaran')->result();
+		foreach ($data_unit as $row) {
+			$arr_data_unit[$row->unit_kode] = $row->unit_nama;
+		}
+		$data['arr_data_unit'] = $arr_data_unit;
+		$this->db->select('*');
+		if ($this->session->unit_kode != 'admin') {
+			$this->db->where('unit_kode', $this->session->unit_kode);
+		}
+		$this->db->where_in('jenis', ['LSGJ_pns', 'LSGJ_kdh', 'LSGJ_dprd', 'LSGJ_jasa']);
+		$this->db->from('spp-spm-sp2d');
+		$data['data_spp'] = $this->db->get()->result();
+		$data['main_content'] = 'view_' . $this->modul_name;
+		$this->load->view('main/main_layout', $data);
+	}
+
+          public function form($idkey = '')
+          {
+            $this->modul_title = 'Pindah Buku';
+            extract($_POST);
+            if (!empty($idkey)) {
+              if (substr($idkey, 0, 1) == 'v') {
+                $idkey = substr($idkey, 1);
+                $data['idkey'] = $idkey;
+                $data['vmode'] = true;
+              }else{
+                $data['idkey'] = $idkey;
+                $data['vmode'] = false;
+              }
+              $this->db->where('a.id_bku', $idkey_sub);
+		        	$this->db->select('a.*');
+              $this->db->from('bku a');
+              $data['bku'] = $this->db->get()->row();
+              if (isset($submit)) {
+                $params_bku['tanggal'] = $tgl_pindah_buku;
+                $params_bku['uraian'] = 'Pemindahbukuan';
+                $this->db->where('id_bku', $idkey_sub);
+                $this->db->update('bku', $params_bku);
+                redirect($this->modul_name);
+              }
+            }else{ // ,if (!empty($idkey))
+              if (isset($submit)) {
+                $params_bku['tanggal'] = $tgl_pindah_buku;
+                $params_bku['uraian'] = 'Pemindahbukuan';
+                $this->db->insert('bku', $params_bku);
+                $insert_id = $this->db->insert_id();
+                redirect($this->modul_name);
+              }
+            } // .if (!empty($idkey))
+            $data['main_content'] = 'form_pindah_buku';
+		        $this->load->view('main/main_layout', $data);
+          }
+
+          public function delete($idkey = '')
+	{
+		$this->db->where('id', $idkey);
+		$this->db->delete('spp-spm-sp2d_rekening');
+		$this->db->where('id', $idkey);
+		$this->db->delete('spp-spm-sp2d_potongan');
+		$this->db->where('id', $idkey);
+		$this->db->delete('spp-spm-sp2d_bank');
+		$this->db->where('id', $idkey);
+		$this->db->delete('spp-spm-sp2d_pejabat');
+		$this->db->where('id', $idkey);
+		$this->db->delete('spp-spm-sp2d');
+		redirect($this->modul_name);
+	}
+
+  public function getRincian()
+	{
+		$jenis = $this->input->post('jenis');
+		$unit_kode = $this->input->post('unit_kode');
+		$rincian = $this->db->query("CALL " . $jenis . "('" . $unit_kode . "')")->result();
+		if ($rincian) {
+			echo 'input type="hidden" class="rincianCount" name="rincianCount" id="rincianCount" value="' . count($rincian) . '">';
+			$ii = 0;
+			foreach ($rincian as $row) {
+				echo 'tr>
+						td>' . $row->sub_kegiatan_kode . '/td>
+						td>' . $row->sub_rincian_obyek_kode . '/td>
+						td>' . $row->sub_rincian_obyek_nama . '/td>
+						td>' . $row->pagu . '/td>
+						td>
+						input type="hidden" class="sub_kegiatan_kode' . $ii . '" name="sub_kegiatan_kode' . $ii . '" id="sub_kegiatan_kode' . $ii . '" value="' . $row->sub_kegiatan_kode . '">
+						input type="hidden" class="sub_rincian_obyek_kode' . $ii . '" name="sub_rincian_obyek_kode' . $ii . '" id="sub_rincian_obyek_kode' . $ii . '" value="' . $row->sub_rincian_obyek_kode . '">
+						input type="hidden" class="sub_rincian_obyek_nama' . $ii . '" name="sub_rincian_obyek_nama' . $ii . '" id="sub_rincian_obyek_nama' . $ii . '" value="' . $row->sub_rincian_obyek_nama . '">
+						input type="hidden" class="pagu' . $ii . '" name="pagu' . $ii . '" id="pagu' . $ii . '" value="' . $row->pagu . '">
+						input  type="text" class="form-control nilai_rincian' . $ii . '" name="nilai_rincian' . $ii . '" id="nilai_rincian' . $ii . '">
+						/td>
+					/tr>';
+				$ii++;
+			}
+		}
+	}
+
+
+  public function getBkuRinciById()
+	{
+		$unit_kode = $this->input->post('unit_kode');
+		$dataBkuRinci = $this->db->query("
+			SELECT 
+				bkus_r.id,
+				bkus_r.sub_kegiatan_kode,
+				bkus_r.sub_rincian_obyek_kode,
+				rek.uraian nama_rekening,
+				bkus_r.jumlah belanja
+			FROM bku_spj_gu_rek bkus_r
+			JOIN bku_spj_gu bkus
+				ON bkus.id = bkus_r.id_bku_spj_gu
+			JOIN view_m_rekening rek
+				ON bkus_r.sub_rincian_obyek_kode = rek.kode
+			WHERE 
+				bkus.unit_kode = '" . $unit_kode . "'
+				AND bkus_r.id_spp IS NULL
+			")->result();
+		echo json_encode($dataBkuRinci);
+	}
+
+
+  public function getRincianById()
+	{
+		$idkey = $this->input->post('idkey');
+		$this->db->select('a.*,b.nilai_potongan');
+		$this->db->where('a.id', $idkey);
+		$this->db->join('(select * from `spp-spm-sp2d_potongan` where id="' . $idkey . '") b', 'b.sub_rincian_obyek_kode=a.sub_rincian_obyek_kode', 'left');
+		$dataRincian = $this->db->get('spp-spm-sp2d_rekening a')->result();
+		echo json_encode($dataRincian);
+	}
+
+
+        </code></pre>
+    </main>
+    <div w3-include-html="../../../assets/footer.html"></div>
+
+    <script>
+        includeHTML();
+    </script>
