@@ -30,23 +30,18 @@
         </div>
         <script>
             function myFunction() {
-                var element = document.getElementById("basic-function-javascript");
+                var element = document.getElementById("disable-double-klik-submit");
                 element.classList.add("active");
             }
         </script>
         <!-- content below here -->
 
-        <h5>Windows Print</h5>
+        <h5>disable-double-klik-submit</h5>
         <pre><code contenteditable spellcheck="false">
-// Windows Print
-&lt;script&gt;
-    window.print()
-&lt;/script&gt;
-
-// disable double klik submit
-$('form#myform').submit(function() {
-    $(this).find(':input[type=submit]').prop('disabled', true);
-});
+            // disable double klik submit
+            $('form#myform').submit(function() {
+                $(this).find(':input[type=submit]').prop('disabled', true);
+            });
         </code></pre>
 
     </main>

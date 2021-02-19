@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>lcscodes.github.io</title>
+    <script type="text/javascript" src="../../../assets/include_html.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/dashboard.css" rel="stylesheet">
+</head>
+
+<body onload="myFunction()">
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">lcscodes.github.io</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+            </li>
+        </ul>
+    </nav>
+    <div w3-include-html="../../../menu.html"></div>
+    </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">JAVASCRIPT</h1>
+        </div>
+        <script>
+            function myFunction() {
+                var element = document.getElementById("validation-form-submit");
+                element.classList.add("active");
+            }
+        </script>
+        <!-- content below here -->
+
+        <h5>validation-form-submit</h5>
+        <pre><code contenteditable spellcheck="false">
+            //script
+            function formValidation() {
+				var table = document.getElementById("tableId");
+				var tbodyRowCount = table.tBodies[0].rows.length; // 3
+				if (tbodyRowCount == 0) {
+					alert('Rincian Rekening Tidak Ada');
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+            //form attribute
+            &lt;form class="form-horizontal" enctype="multipart/form-data" action="" method="post" name="myform" id="myform" onSubmit="return formValidation();">&lt;/form>
+
+        </code></pre>
+
+    </main>
+    <div w3-include-html="../../../assets/footer.html"></div>
+
+    <script>
+        includeHTML();
+    </script>
