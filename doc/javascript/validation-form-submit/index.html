@@ -53,6 +53,39 @@
             //form attribute
             &lt;form class="form-horizontal" enctype="multipart/form-data" action="" method="post" name="myform" id="myform" onSubmit="return formValidation();">&lt;/form>
 
+
+            //untuk validasi hapus
+            &lt;script>
+                function formValidation(idkey) {
+                    $.ajax({
+                        url: "&lt;?php echo base_url() . $this->modul_name . '/cekBeforeDelete'; ?>",
+                        type: 'POST', //method: 'POST',
+                        async: false,
+                        data: {
+                            idkey: idkey
+                        },
+                        success: function(res) {
+                            resx = res;
+                        }
+                    });
+                    if (resx > 0) {
+                        alert('barang tidak bisa dihapus karena sudah dipakai untuk transaksi..');
+                        return false;
+                    } else {
+                        var result = confirm("Yakin akan dihapus?");
+                        if (result) {
+                            alert('hapus berhasil');
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+                &lt;/script>
+
+                //form attribute
+                &lt;a href=" &lt;?php echo base_url() . $this->modul_name . '/delete/' . $row->$key; ?>" onclick="return formValidation( &lt;?php echo $row->$key; ?>)"> &lt;i class="fa fa-trash"> &lt;/i>
+                &lt;/a>
         </code></pre>
 
     </main>
