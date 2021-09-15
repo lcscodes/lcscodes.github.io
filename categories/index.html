@@ -12,9 +12,9 @@
 <title>Categories | LCS CODES</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" integrity="sha256-RhgbyTN1upMgJudTs3xA5v&#43;LsWqe93DHi8xmPkV3sbo=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.41c89def6ff9328c05d664cda63ea21089a745e7fd0edf81d5eda693acfbcf63.js" integrity="sha256-Qcid72/5MowF1mTNpj6iEImnRef9Dt&#43;B1e2mk6z7z2M=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.e2b19c539bf70b978074481600907d9e4c5a48ea2404083cc198964cbc236e0b.js" integrity="sha256-4rGcU5v3C5eAdEgWAJB9nkxaSOokBAg8wZiWTLwjbgs=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://lcscodes.github.io/categories/index.xml" title="LCS CODES" />
 <!--
 Made with Book Theme
@@ -80,10 +80,25 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="https://lcscodes.github.io/docs/hugo/" class="">Hugo</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="https://lcscodes.github.io/docs/install-git/" class="">Install Git</a>
   
 
         </li>
+      
+    
       
     
   </ul>
@@ -107,7 +122,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
@@ -170,6 +185,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+
+
  
       
 
@@ -185,7 +202,8 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
 
 
  
