@@ -4,10 +4,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Hugo
-hugo : generate public hugo new">
+Command Line help : hugo &ndash;help generate folder public : hugo new content : hugo new posts/newpost.md , hugo new docs/newdocs.md
+Installation
+Windows
+ install scoop  Scoop installs the tools you know and love command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run: command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&lsquo;https://get.scoop.sh&rsquo;)
+or shorter#command: iwr -useb get.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Hugo" />
 <meta property="og:description" content="Hugo
-hugo : generate public hugo new" />
+Command Line help : hugo &ndash;help generate folder public : hugo new content : hugo new posts/newpost.md , hugo new docs/newdocs.md
+Installation
+Windows
+ install scoop  Scoop installs the tools you know and love command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run: command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&lsquo;https://get.scoop.sh&rsquo;)
+or shorter#command: iwr -useb get." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lcscodes.github.io/docs/hugo/" />
 
@@ -16,7 +24,7 @@ hugo : generate public hugo new" />
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.e2b19c539bf70b978074481600907d9e4c5a48ea2404083cc198964cbc236e0b.js" integrity="sha256-4rGcU5v3C5eAdEgWAJB9nkxaSOokBAg8wZiWTLwjbgs=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b037f61ced9cd037b0d6476b974fd2ce0909d68a467cc6d1d621bc1654f13c2c.js" integrity="sha256-sDf2HO2c0Dew1kdrl0/SzgkJ1opGfMbR1iG8FlTxPCw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -101,6 +109,19 @@ https://github.com/alex-shpak/hugo-book
       
     
       
+        <li>
+          
+  
+  
+
+  
+    <a href="https://lcscodes.github.io/docs/laravel/" class="">Laravel</a>
+  
+
+        </li>
+      
+    
+      
     
   </ul>
 
@@ -164,8 +185,47 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><p>Hugo</p>
-<p>hugo : generate public
-hugo new</p>
+<p>Command Line
+help : hugo &ndash;help
+generate folder public : hugo
+new content : hugo new posts/newpost.md , hugo new docs/newdocs.md</p>
+<p>Installation</p>
+<p>Windows</p>
+<ol>
+<li>install scoop</li>
+</ol>
+<p>Scoop installs the tools you know and love
+command: scoop install curl
+Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
+command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&lsquo;<a href="https://get.scoop.sh">https://get.scoop.sh</a>&rsquo;)</p>
+<h1 id="or-shorter">
+  or shorter
+  <a class="anchor" href="#or-shorter">#</a>
+</h1>
+<pre><code>command: iwr -useb get.scoop.sh | iex
+</code></pre>
+<p>Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with
+command: Set-ExecutionPolicy RemoteSigned -scope CurrentUser</p>
+<ol start="2">
+<li>
+<p>install hugo dengan scoop
+command: scoop install hugo
+Or install the extended version with:
+command: scoop install hugo-extended
+install theme (cari di web hugo)
+command: git submodule add <a href="https://github.com/alex-shpak/hugo-book">https://github.com/alex-shpak/hugo-book</a> themes/book
+Then run hugo (or set theme = &ldquo;book&rdquo;/theme: book in configuration file)
+command: hugo server &ndash;minify &ndash;theme book</p>
+</li>
+<li>
+<p>jalankan web dengan perintah
+command: hugo server
+copy link server ke browser.
+Untuk generate folder public
+command: hugo
+folder public akan muncul, website statis siap di upload.</p>
+</li>
+</ol>
 </article>
  
       
