@@ -21,8 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lcscodes.github.io/docs/hugo/</guid>
-      <description>Hugo#Command Line
-help : hugo --helpgenerate folder public : hugonew content : hugo new posts/newpost.md , hugo new docs/newdocs.md Installation#Windows#  install scoop
+      <description>Hugo#Command Line#help : hugo --helpgenerate folder public : hugonew content : hugo new posts/newpost.md , hugo new docs/newdocs.md Installation#Windows#  install scoop
 Scoop installs the tools you know and love
 command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
 command: Invoke-Expression (New-Object System.</description>
