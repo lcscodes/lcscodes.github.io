@@ -21,10 +21,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lcscodes.github.io/docs/hugo/</guid>
-      <description>Hugo#Command Line#help : hugo --helpgenerate folder public : hugonew content : hugo new posts/newpost.md , hugo new docs/newdocs.md Installation#Windows#  install scoop
-Scoop installs the tools you know and love
-command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
-command: Invoke-Expression (New-Object System.</description>
+      <description>Hugo#Command Line#help : hugo --helpgenerate folder public : hugonew content : hugo new posts/newpost.md , hugo new docs/newdocs.md Installation#Windows 10#  install scoop
+Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&#39;https://get.scoop.sh&#39;) or shorter
+iwr -useb get.scoop.sh | iex Note: if you get an error you might need to change the execution policy (i.</description>
     </item>
     
     <item>
@@ -48,18 +48,10 @@ command: Invoke-Expression (New-Object System.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lcscodes.github.io/docs/laravel/</guid>
-      <description>Laravel
-On Windows
- install composer instal docker desktop https://www.docker.com/products/docker-desktop  </description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://lcscodes.github.io/docs/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lcscodes.github.io/docs/test/</guid>
-      <description></description>
+      <description>Laravel#On Windows#  install composer
+  buat project
+ composer create-project laravel/laravel example-app Develop server
+ cd example-appartisan serve   </description>
     </item>
     
   </channel>
