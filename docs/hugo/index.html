@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hugo
-Command Line help : hugo &ndash;help generate folder public : hugo new content : hugo new posts/newpost.md , hugo new docs/newdocs.md
-Installation
-Windows
- install scoop  Scoop installs the tools you know and love command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run: command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&lsquo;https://get.scoop.sh&rsquo;)
-or shorter#command: iwr -useb get.">
+<meta name="description" content="Hugo#Command Line
+help : hugo --helpgenerate folder public : hugonew content : hugo new posts/newpost.md , hugo new docs/newdocs.md Installation#Windows#  install scoop
+Scoop installs the tools you know and love
+command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
+command: Invoke-Expression (New-Object System.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Hugo" />
-<meta property="og:description" content="Hugo
-Command Line help : hugo &ndash;help generate folder public : hugo new content : hugo new posts/newpost.md , hugo new docs/newdocs.md
-Installation
-Windows
- install scoop  Scoop installs the tools you know and love command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run: command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&lsquo;https://get.scoop.sh&rsquo;)
-or shorter#command: iwr -useb get." />
+<meta property="og:description" content="Hugo#Command Line
+help : hugo --helpgenerate folder public : hugonew content : hugo new posts/newpost.md , hugo new docs/newdocs.md Installation#Windows#  install scoop
+Scoop installs the tools you know and love
+command: scoop install curl Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
+command: Invoke-Expression (New-Object System." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lcscodes.github.io/docs/hugo/" />
 
@@ -24,7 +22,7 @@ or shorter#command: iwr -useb get." />
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.b037f61ced9cd037b0d6476b974fd2ce0909d68a467cc6d1d621bc1654f13c2c.js" integrity="sha256-sDf2HO2c0Dew1kdrl0/SzgkJ1opGfMbR1iG8FlTxPCw=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.d9e06d2ca9eafd8b1e7052701a4d1219f52c2450e449c0013f6e5a47d1747d66.js" integrity="sha256-2eBtLKnq/YsecFJwGk0SGfUsJFDkScABP25aR9F0fWY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -173,7 +171,15 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#windows">Windows</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -184,46 +190,61 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p>Hugo</p>
-<p>Command Line
-help : hugo &ndash;help
-generate folder public : hugo
-new content : hugo new posts/newpost.md , hugo new docs/newdocs.md</p>
-<p>Installation</p>
-<p>Windows</p>
-<ol>
-<li>install scoop</li>
-</ol>
-<p>Scoop installs the tools you know and love
-command: scoop install curl
-Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:
-command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&lsquo;<a href="https://get.scoop.sh">https://get.scoop.sh</a>&rsquo;)</p>
-<h1 id="or-shorter">
-  or shorter
-  <a class="anchor" href="#or-shorter">#</a>
+  <article class="markdown"><h1 id="hugo">
+  Hugo
+  <a class="anchor" href="#hugo">#</a>
 </h1>
+<p>Command Line</p>
+<pre><code>help : hugo --help
+generate folder public : hugo
+new content : hugo new posts/newpost.md , hugo new docs/newdocs.md
+</code></pre>
+<h2 id="installation">
+  Installation
+  <a class="anchor" href="#installation">#</a>
+</h2>
+<h3 id="windows">
+  Windows
+  <a class="anchor" href="#windows">#</a>
+</h3>
+<ol>
+<li>
+<p>install scoop</p>
+<p>Scoop installs the tools you know and love</p>
+<pre><code>command: scoop install curl
+</code></pre>
+<p>Make sure PowerShell 5 (or later, include PowerShell Core) and .NET Framework 4.5 (or later) are installed. Then run:</p>
+<pre><code>command: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+</code></pre>
+<p>or shorter</p>
 <pre><code>command: iwr -useb get.scoop.sh | iex
 </code></pre>
-<p>Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with
-command: Set-ExecutionPolicy RemoteSigned -scope CurrentUser</p>
-<ol start="2">
-<li>
-<p>install hugo dengan scoop
-command: scoop install hugo
-Or install the extended version with:
-command: scoop install hugo-extended
-install theme (cari di web hugo)
-command: git submodule add <a href="https://github.com/alex-shpak/hugo-book">https://github.com/alex-shpak/hugo-book</a> themes/book
-Then run hugo (or set theme = &ldquo;book&rdquo;/theme: book in configuration file)
-command: hugo server &ndash;minify &ndash;theme book</p>
+<p>Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with</p>
+<p>command: Set-ExecutionPolicy RemoteSigned -scope CurrentUser</p>
 </li>
 <li>
-<p>jalankan web dengan perintah
-command: hugo server
-copy link server ke browser.
-Untuk generate folder public
-command: hugo
-folder public akan muncul, website statis siap di upload.</p>
+<p>install hugo dengan scoop</p>
+<pre><code> scoop install hugo
+</code></pre>
+<p>Or install the extended version with:</p>
+<pre><code>scoop install hugo-extended
+</code></pre>
+<p>install theme (cari di web hugo)</p>
+<pre><code>git submodule add https://github.com/alex-shpak/hugo-book themes/book
+</code></pre>
+<p>Then run hugo (or set theme = &ldquo;book&rdquo;/theme: book in configuration file)</p>
+<pre><code>hugo server --minify --theme book
+</code></pre>
+</li>
+<li>
+<p>jalankan web dengan perintah</p>
+<pre><code>hugo server
+</code></pre>
+<p>copy link server ke browser.</p>
+<p>Untuk generate folder public</p>
+<pre><code>command: hugo
+</code></pre>
+<p>folder public akan muncul, website statis siap di upload.</p>
 </li>
 </ol>
 </article>
@@ -266,7 +287,15 @@ document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("clic
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#windows">Windows</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  
