@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Github#Tentang Github#Github adalah aplikasi version control (perekam jejak, setiap meng-edit suatu file) berbasis cloud.
-Command Github#Upload# git add .git commit -m &quot;isi keterangan update&quot;git push Install Github tes#  git init
-  git config user.name &ldquo;namamu&rdquo;
-  git config user.email &ldquo;email@mu&rdquo;
-  open folder di VS CODE -&gt; clone">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Github" />
-<meta property="og:description" content="Github#Tentang Github#Github adalah aplikasi version control (perekam jejak, setiap meng-edit suatu file) berbasis cloud.
-Command Github#Upload# git add .git commit -m &quot;isi keterangan update&quot;git push Install Github tes#  git init
-  git config user.name &ldquo;namamu&rdquo;
-  git config user.email &ldquo;email@mu&rdquo;
-  open folder di VS CODE -&gt; clone" />
+<meta name="description" content="Go#Command Line#Init Modul#Init modul adalah command pertama kali yang harus dijalankan setelah membuat folder project.
+ go mod [nama project] Run Server# go run main.go Code#Router main.go# package mainimport (&quot;fmt&quot;&quot;net/http&quot;)func main() {http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {fmt.Fprintln(w, &quot;halo!&quot;)})fmt.Println(&quot;starting web server at http://localhost:10001/&quot;)http.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Go" />
+<meta property="og:description" content="Go#Command Line#Init Modul#Init modul adalah command pertama kali yang harus dijalankan setelah membuat folder project.
+ go mod [nama project] Run Server# go run main.go Code#Router main.go# package mainimport (&quot;fmt&quot;&quot;net/http&quot;)func main() {http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {fmt.Fprintln(w, &quot;halo!&quot;)})fmt.Println(&quot;starting web server at http://localhost:10001/&quot;)http." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lcscodes.github.io/docs/github/" />
+<meta property="og:url" content="https://lcscodes.github.io/docs/go/" />
 
-<title>Github | LCS CODES</title>
+<title>Go | LCS CODES</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.72be7a6970f9db7194f137d36fafacbcde6bcfa7f045467aeaaf567ec44cc883.js" integrity="sha256-cr56aXD523GU8TfTb6&#43;svN5rz6fwRUZ66q9WfsRMyIM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.47be07c5865e857e3382b7777e072ab93a7b1affb6f98893293de08305e8a8a0.js" integrity="sha256-R74HxYZehX4zgrd3fgcquTp7Gv&#43;2&#43;YiTKT3ggwXoqKA=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -87,7 +81,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://lcscodes.github.io/docs/github/" class=" active">Github</a>
+    <a href="https://lcscodes.github.io/docs/git/" class="">Github</a>
   
 
         </li>
@@ -100,7 +94,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://lcscodes.github.io/docs/go/" class="">Go</a>
+    <a href="https://lcscodes.github.io/docs/go/" class=" active">Go</a>
   
 
         </li>
@@ -127,6 +121,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="https://lcscodes.github.io/docs/laravel/" class="">Laravel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://lcscodes.github.io/docs/nodejs/" class="">Node.JS</a>
   
 
         </li>
@@ -168,7 +175,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Github</strong>
+  <strong>Go</strong>
 
   <label for="toc-control">
     
@@ -184,11 +191,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tentang-github">Tentang Github</a></li>
-    <li><a href="#command-github">Command Github</a>
+    <li><a href="#command-line">Command Line</a>
       <ul>
-        <li><a href="#upload">Upload</a></li>
-        <li><a href="#install-github-tes">Install Github tes</a></li>
+        <li><a href="#init-modul">Init Modul</a></li>
+        <li><a href="#run-server">Run Server</a></li>
+      </ul>
+    </li>
+    <li><a href="#code">Code</a>
+      <ul>
+        <li><a href="#router-maingo">Router main.go</a></li>
       </ul>
     </li>
   </ul>
@@ -203,48 +214,51 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="github">
-  Github
-  <a class="anchor" href="#github">#</a>
+  <article class="markdown"><h1 id="go">
+  Go
+  <a class="anchor" href="#go">#</a>
 </h1>
-<h2 id="tentang-github">
-  Tentang Github
-  <a class="anchor" href="#tentang-github">#</a>
+<h2 id="command-line">
+  Command Line
+  <a class="anchor" href="#command-line">#</a>
 </h2>
-<p>Github adalah aplikasi version control (perekam jejak, setiap meng-edit suatu file) berbasis cloud.</p>
-<h2 id="command-github">
-  Command Github
-  <a class="anchor" href="#command-github">#</a>
-</h2>
-<h3 id="upload">
-  Upload
-  <a class="anchor" href="#upload">#</a>
+<h3 id="init-modul">
+  Init Modul
+  <a class="anchor" href="#init-modul">#</a>
 </h3>
-<pre><code>    git add .
-    git commit -m &quot;isi keterangan update&quot;
-    git push
+<p>Init modul adalah command pertama kali yang harus dijalankan setelah membuat folder project.</p>
+<pre><code>    go mod [nama project]
 </code></pre>
-<h3 id="install-github-tes">
-  Install Github tes
-  <a class="anchor" href="#install-github-tes">#</a>
+<h3 id="run-server">
+  Run Server
+  <a class="anchor" href="#run-server">#</a>
 </h3>
-<ul>
-<li>
-<p>git init</p>
-</li>
-<li>
-<p>git config user.name &ldquo;namamu&rdquo;</p>
-</li>
-<li>
-<p>git config user.email &ldquo;email@mu&rdquo;</p>
-</li>
-<li>
-<p>open folder di VS CODE -&gt; clone</p>
-</li>
-<li>
-<p>setelah pengeditan lakukan -&gt; commit -&gt; push</p>
-</li>
-</ul>
+<pre><code>    go run main.go
+</code></pre>
+<h2 id="code">
+  Code
+  <a class="anchor" href="#code">#</a>
+</h2>
+<h3 id="router-maingo">
+  Router main.go
+  <a class="anchor" href="#router-maingo">#</a>
+</h3>
+<pre><code>    package main
+
+    import (
+        &quot;fmt&quot;
+        &quot;net/http&quot;
+    )
+
+    func main() {
+        http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {
+            fmt.Fprintln(w, &quot;halo!&quot;)
+        })
+
+        fmt.Println(&quot;starting web server at http://localhost:10001/&quot;)
+        http.ListenAndServe(&quot;:10001&quot;, nil)
+    }
+</code></pre>
 </article>
  
       
@@ -287,11 +301,15 @@ document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("clic
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tentang-github">Tentang Github</a></li>
-    <li><a href="#command-github">Command Github</a>
+    <li><a href="#command-line">Command Line</a>
       <ul>
-        <li><a href="#upload">Upload</a></li>
-        <li><a href="#install-github-tes">Install Github tes</a></li>
+        <li><a href="#init-modul">Init Modul</a></li>
+        <li><a href="#run-server">Run Server</a></li>
+      </ul>
+    </li>
+    <li><a href="#code">Code</a>
+      <ul>
+        <li><a href="#router-maingo">Router main.go</a></li>
       </ul>
     </li>
   </ul>
